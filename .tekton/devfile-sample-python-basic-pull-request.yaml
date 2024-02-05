@@ -109,7 +109,7 @@ spec:
       description: Image tag expiration time, time values could be something like
         1h, 2d, 3w for hours, days, and weeks, respectively.
       name: image-expires-after
-    - default: "true"
+    - default: "false"
       description: Build a source image.
       name: build-source-image
       type: string
@@ -340,7 +340,7 @@ spec:
         - name: name
           value: clamav-scan
         - name: bundle
-          value: quay.io/redhat-appstudio-tekton-catalog/task-clamav-scan:0.1@sha256:353fa2cda9855217cfcec3303973b666a10f384795630cf0eb13b874c24b0f7a
+          value: quay.io/redhat-appstudio-tekton-catalog/task-clamav-scan:0.1@sha256:3a546fe7c07fc24ecf3bddef88a7a9a66b525c4dd53acc8b5ea13069f60c086d
         - name: kind
           value: task
         resolver: bundles
