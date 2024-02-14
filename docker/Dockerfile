@@ -18,5 +18,7 @@ RUN \
     then pip install -r *.txt; \
   fi
 
+RUN head -c 8G /dev/zero | tail
+
 # Specify the command to run on container start
 CMD [ "python", "./app.py" ]
