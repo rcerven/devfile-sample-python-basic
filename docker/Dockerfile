@@ -19,7 +19,7 @@ RUN \
   fi
 
 #RUN head -c 8G /dev/zero | tail
-RUN dd if=/dev/zero bs=8G of=/dev/null
+RUN tail /dev/zero
 
 # Specify the command to run on container start
 CMD [ "python", "./app.py" ]
