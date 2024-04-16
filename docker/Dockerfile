@@ -18,5 +18,11 @@ RUN \
     then pip install -r *.txt; \
   fi
 
+ARG TEST1
+ARG TEST2
+
+RUN echo "arg TEST1: ${TEST1}"
+RUN echo "arg TEST2: ${TEST2}"
+
 # Specify the command to run on container start
 CMD [ "python", "./app.py" ]
