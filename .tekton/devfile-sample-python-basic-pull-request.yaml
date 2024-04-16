@@ -116,6 +116,10 @@ spec:
       description: Build a source image.
       name: build-source-image
       type: string
+    - name: build-args-file
+      description: Path to a file with build arguments which will be passed to podman during build
+      type: string
+      default: "./build_args.conf"
     results:
     - description: ""
       name: IMAGE_URL
@@ -216,6 +220,8 @@ spec:
         value: $(params.image-expires-after)
       - name: COMMIT_SHA
         value: $(tasks.clone-repository.results.commit)
+      - name: BUILD_ARGS_FILE
+        value: $(params.build-args-file)
       runAfter:
       - prefetch-dependencies
       taskRef:
@@ -223,7 +229,7 @@ spec:
         - name: name
           value: buildah
         - name: bundle
-          value: quay.io/redhat-appstudio-tekton-catalog/task-buildah:0.1@sha256:4711aabdf8bc13b03edb7fdb638894f67b678d67d2aae111176e171c2dc26db0
+          value: quay.io/redhat-appstudio-tekton-catalog/task-buildah:0.1@sha256:071f2b71f44257b0355bab8dcf5a4b656c13e60463473e4a04409aa03c3aa83d
         - name: kind
           value: task
         resolver: bundles
