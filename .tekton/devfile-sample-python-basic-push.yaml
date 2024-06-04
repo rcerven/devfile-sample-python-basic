@@ -10,7 +10,7 @@ metadata:
       == "main"
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: rcerventtt
+    appstudio.openshift.io/application: myapp
     appstudio.openshift.io/component: devfile-sample-python-basic
     pipelines.appstudio.openshift.io/type: build
   name: devfile-sample-python-basic-on-push
@@ -18,11 +18,11 @@ metadata:
 spec:
   params:
   - name: dockerfile
-    value: Dockerfile
+    value: /docker/Dockerfile
   - name: git-url
     value: '{{source_url}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads-stage/exd-rcerven-tenant/rcerventtt/devfile-sample-python-basic:{{revision}}
+    value: quay.io/redhat-user-workloads/exd-rcerven-tenant/myapp/devfile-sample-python-basic:{{revision}}
   - name: revision
     value: '{{revision}}'
   pipelineSpec:
