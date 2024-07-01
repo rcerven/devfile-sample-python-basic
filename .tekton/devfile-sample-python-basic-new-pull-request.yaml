@@ -8,13 +8,13 @@ metadata:
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch
-      == "main"
+      == "test"
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: testapplication
-    appstudio.openshift.io/component: devfile-sample-python-basic
+    appstudio.openshift.io/component: devfile-sample-python-basic-new
     pipelines.appstudio.openshift.io/type: build
-  name: devfile-sample-python-basic-on-pull-request
+  name: devfile-sample-python-basic-new-on-pull-request
   namespace: exd-rcerven-tenant
 spec:
   params:
