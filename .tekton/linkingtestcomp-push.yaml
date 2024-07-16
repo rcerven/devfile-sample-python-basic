@@ -153,6 +153,12 @@ spec:
         - name: kind
           value: task
         resolver: bundles
+    - name: rcerven-test
+      taskRef:
+        kind: Task
+        name: rcerven-test
+      runAfter:
+      - init
     - name: clone-repository
       params:
       - name: url
